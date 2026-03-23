@@ -369,12 +369,11 @@
 
     <div class="item" id="item-1-1">
       <div class="item-icon-wrap">
-        <div class="item-icon">🏘️</div>
+        <div class="item-icon">🤝</div>
       </div>
       <div class="item-body">
         <p class="item-time">Evening</p>
-        <p class="item-title">West Village</p>
-        <p class="item-desc">Bleecker, Perry, Charles — cobblestones, brownstones, dim café lights. The most charming streets in NYC.</p>
+        <p class="item-title">Meet & head to West Village / SoHo</p>
       </div>
       <button class="check-btn" onclick="toggle(this, '1-1')">
         <svg width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M1 5L5.5 9.5L13 1" stroke="#07091c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -387,10 +386,23 @@
       </div>
       <div class="item-body">
         <p class="item-time">9:30 – 10:00 PM</p>
-        <p class="item-title">Dinner in the West Village</p>
-        <p class="item-desc">Via Carota (Italian) or Buvette (French bistro) — both great, both walk-in.</p>
+        <p class="item-title">Dinner somewhere nice</p>
+        <span class="badge badge-tip">😤 Because we are HANGRY</span>
       </div>
       <button class="check-btn" onclick="toggle(this, '1-2')">
+        <svg width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M1 5L5.5 9.5L13 1" stroke="#07091c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="item" id="item-1-3">
+      <div class="item-icon-wrap">
+        <div class="item-icon">🏘️</div>
+      </div>
+      <div class="item-body">
+        <p class="item-time">After dinner</p>
+        <p class="item-title">Walk the West Village</p>
+      </div>
+      <button class="check-btn" onclick="toggle(this, '1-3')">
         <svg width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M1 5L5.5 9.5L13 1" stroke="#07091c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </div>
@@ -411,7 +423,6 @@
       <div class="item-body">
         <p class="item-time">10:30 AM · SoHo</p>
         <p class="item-title">Breakfast at Jack's Wife Freda</p>
-        <p class="item-desc">Mediterranean-inspired brunch. SoHo classic.</p>
         <span class="badge badge-reserved">⭐ Reserved · 10:30 AM</span>
       </div>
       <button class="check-btn" onclick="toggle(this, '2-1')">
@@ -426,7 +437,6 @@
       <div class="item-body">
         <p class="item-time">After breakfast</p>
         <p class="item-title">Stop by Ceres — put name in for 5 PM</p>
-        <p class="item-desc">Get your name on the list for dinner at 5.</p>
         <span class="badge badge-reserved">🕔 Dinner at 5:00 PM</span>
       </div>
       <button class="check-btn" onclick="toggle(this, '2-2')">
@@ -441,8 +451,7 @@
       <div class="item-body">
         <p class="item-time">Mid-morning</p>
         <p class="item-title">Walk The High Line</p>
-        <p class="item-desc">Elevated park on old railway tracks through Chelsea. Great views, street art, cherry blossoms in April.</p>
-        <span class="badge badge-tip">💡 Free · ~1.5 mi · Start at Gansevoort St</span>
+        <span class="badge badge-tip">💡 Free · ~1.5 mi</span>
       </div>
       <button class="check-btn" onclick="toggle(this, '2-3')">
         <svg width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M1 5L5.5 9.5L13 1" stroke="#07091c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -458,8 +467,7 @@
       <div class="item-body">
         <p class="item-time">~2:00 PM · Midtown</p>
         <p class="item-title">Summit One Vanderbilt</p>
-        <p class="item-desc">360° views, mirrored rooms, glass floors. One of the best things to do in the city right now.</p>
-        <span class="badge badge-tip">🎟️ Book tickets in advance online</span>
+        <span class="badge badge-tip">🎟️ Book tickets in advance</span>
       </div>
       <button class="check-btn" onclick="toggle(this, '2-4')">
         <svg width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M1 5L5.5 9.5L13 1" stroke="#07091c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -473,40 +481,50 @@
       <div class="item-body">
         <p class="item-time">After Summit One</p>
         <p class="item-title">Grand Central Terminal</p>
-        <p class="item-desc">Right next door. The main concourse is jaw-dropping — worth five minutes.</p>
       </div>
       <button class="check-btn" onclick="toggle(this, '2-5')">
         <svg width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M1 5L5.5 9.5L13 1" stroke="#07091c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </div>
 
-    <p class="section-header">Evening</p>
-
     <div class="item" id="item-2-6">
       <div class="item-icon-wrap">
-        <div class="item-icon">🍕</div>
+        <div class="item-icon">🌳</div>
       </div>
       <div class="item-body">
-        <p class="item-time">5:00 PM</p>
-        <p class="item-title">Dinner at Ceres Pizza</p>
-        <p class="item-desc">Pizza to close out the trip.</p>
-        <span class="badge badge-reserved">🕔 5:00 PM</span>
+        <p class="item-time">~4:00 PM</p>
+        <p class="item-title">Bryant Park</p>
       </div>
       <button class="check-btn" onclick="toggle(this, '2-6')">
         <svg width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M1 5L5.5 9.5L13 1" stroke="#07091c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </div>
 
+    <p class="section-header">Evening</p>
+
     <div class="item" id="item-2-7">
+      <div class="item-icon-wrap">
+        <div class="item-icon">🍕</div>
+      </div>
+      <div class="item-body">
+        <p class="item-time">5:00 PM</p>
+        <p class="item-title">Dinner at Ceres Pizza</p>
+        <span class="badge badge-reserved">🕔 5:00 PM</span>
+      </div>
+      <button class="check-btn" onclick="toggle(this, '2-7')">
+        <svg width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M1 5L5.5 9.5L13 1" stroke="#07091c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="item" id="item-2-8">
       <div class="item-icon-wrap">
         <div class="item-icon">✈️</div>
       </div>
       <div class="item-body">
         <p class="item-time">After dinner</p>
         <p class="item-title">Head home</p>
-        <p class="item-desc">That's a wrap. Best trip ever? Probably.</p>
       </div>
-      <button class="check-btn" onclick="toggle(this, '2-7')">
+      <button class="check-btn" onclick="toggle(this, '2-8')">
         <svg width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M1 5L5.5 9.5L13 1" stroke="#07091c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </div>
@@ -517,7 +535,7 @@
 
   <script>
     // ── State ─────────────────────────────────────────
-    const TOTAL_ITEMS = 9;
+    const TOTAL_ITEMS = 11;
     const KEY = 'nyc-trip-done';
 
     function loadState() {
