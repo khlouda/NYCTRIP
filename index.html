@@ -458,6 +458,19 @@
       </button>
     </div>
 
+    <div class="item" id="item-2-3b">
+      <div class="item-icon-wrap">
+        <div class="item-icon">☕</div>
+      </div>
+      <div class="item-body">
+        <p class="item-time">~1:00 PM</p>
+        <p class="item-title">Coffee break</p>
+      </div>
+      <button class="check-btn" onclick="toggle(this, '2-3b')">
+        <svg width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M1 5L5.5 9.5L13 1" stroke="#07091c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
     <p class="section-header">Afternoon</p>
 
     <div class="item" id="item-2-4">
@@ -489,11 +502,11 @@
 
     <div class="item" id="item-2-6">
       <div class="item-icon-wrap">
-        <div class="item-icon">🌳</div>
+        <div class="item-icon">🇮🇹</div>
       </div>
       <div class="item-body">
         <p class="item-time">~4:00 PM</p>
-        <p class="item-title">Bryant Park</p>
+        <p class="item-title">Wander Little Italy & around Ceres</p>
       </div>
       <button class="check-btn" onclick="toggle(this, '2-6')">
         <svg width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M1 5L5.5 9.5L13 1" stroke="#07091c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -535,7 +548,7 @@
 
   <script>
     // ── State ─────────────────────────────────────────
-    const TOTAL_ITEMS = 11;
+    const TOTAL_ITEMS = 12;
     const KEY = 'nyc-trip-done';
 
     function loadState() {
