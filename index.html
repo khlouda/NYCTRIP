@@ -43,7 +43,7 @@
     .hero {
       position: relative;
       background: var(--bg);
-      padding: 56px 24px 40px;
+      padding: 36px 24px 28px;
       text-align: center;
       overflow: hidden;
     }
@@ -77,14 +77,6 @@
     .hero .hero-title { color: #fff; text-shadow: 0 2px 24px rgba(0,0,0,0.5); }
     .hero .hero-sub   { color: rgba(255,255,255,0.92); text-shadow: 0 1px 12px rgba(0,0,0,0.6); }
 
-    .hero .progress-wrap {
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.18);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    .hero .progress-wrap span[style] { color: rgba(255,255,255,0.6); }
-    .hero .progress-count { color: rgba(255,210,100,0.95); }
 
     /* NYC Skyline SVG silhouette */
     .skyline {
@@ -120,63 +112,34 @@
       font-weight: 400;
       color: var(--dim);
       line-height: 1.5;
-      margin-bottom: 32px;
+      margin-bottom: 0;
     }
 
-    /* ── Progress pill ───────────────────────────────── */
-    .progress-wrap {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      padding: 8px 16px;
-      font-size: 13px;
-      color: var(--dim);
-    }
-    .progress-bar-track {
-      width: 80px; height: 4px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 99px;
-      overflow: hidden;
-    }
-    .progress-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--gold), #fde68a);
-      border-radius: 99px;
-      transition: width 0.5s cubic-bezier(0.34,1.56,0.64,1);
-    }
-    .progress-count { font-weight: 600; color: var(--gold); }
 
     /* ── Day tabs ────────────────────────────────────── */
     .tab-row {
-      display: flex;
-      gap: 8px;
-      padding: 20px 20px 0;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 16px 20px 0;
     }
-    .tab-row::-webkit-scrollbar { display: none; }
 
     .tab {
-      flex-shrink: 0;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 2px;
-      padding: 12px 16px;
-      border-radius: 16px;
+      align-items: center;
+      gap: 3px;
+      padding: 16px 20px;
+      border-radius: 18px;
       background: var(--surface);
       border: 1px solid var(--border);
       cursor: pointer;
       transition: background 0.2s, border-color 0.2s, transform 0.15s;
       -webkit-tap-highlight-color: transparent;
       user-select: none;
+      text-align: center;
     }
-    .tab:active { transform: scale(0.96); }
+    .tab:active { transform: scale(0.97); }
     .tab.active {
       background: var(--gold-dim);
       border-color: rgba(245,197,74,0.35);
@@ -191,7 +154,7 @@
     .tab.active .tab-day { color: var(--gold); }
     .tab-date {
       font-family: 'Playfair Display', serif;
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 700;
       color: var(--text);
       line-height: 1.1;
@@ -383,14 +346,6 @@
     <p class="hero-label">✈ New York City</p>
     <h1 class="hero-title">NYC</h1>
     <p class="hero-sub">April 4 – 5 &nbsp;·&nbsp; One night, one full day</p>
-
-    <div class="progress-wrap" id="progressWrap">
-      <span id="progressText" class="progress-count">0</span>
-      <span style="color:rgba(255,255,255,0.6)">done</span>
-      <div class="progress-bar-track">
-        <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
-      </div>
-    </div>
 
     <!-- NYC Skyline silhouette -->
     <svg class="skyline" viewBox="0 0 800 72" preserveAspectRatio="xMidYMax slice" fill="#fff" xmlns="http://www.w3.org/2000/svg" style="opacity:0.18">
@@ -607,7 +562,6 @@
 
   <script>
     // ── State ─────────────────────────────────────────
-    const TOTAL_ITEMS = 12;
     const KEY = 'nyc-trip-done';
 
     function loadState() {
@@ -635,15 +589,6 @@
         setTimeout(() => btn.classList.remove('pop'), 350);
       }
 
-      updateProgress();
-    }
-
-    // ── Progress ──────────────────────────────────────
-    function updateProgress() {
-      const count = Object.values(state).filter(Boolean).length;
-      const pct   = Math.round((count / TOTAL_ITEMS) * 100);
-      document.getElementById('progressText').textContent = count;
-      document.getElementById('progressFill').style.width = pct + '%';
     }
 
     // ── Fade-in observer ──────────────────────────────
@@ -678,25 +623,6 @@
       });
     }
 
-    // ── Swipe to switch days ──────────────────────────
-    (function initSwipe() {
-      const panels = document.querySelector('body');
-      let startX = 0, startY = 0;
-
-      panels.addEventListener('touchstart', e => {
-        startX = e.touches[0].clientX;
-        startY = e.touches[0].clientY;
-      }, { passive: true });
-
-      panels.addEventListener('touchend', e => {
-        const dx = e.changedTouches[0].clientX - startX;
-        const dy = e.changedTouches[0].clientY - startY;
-        if (Math.abs(dx) < 50 || Math.abs(dy) > Math.abs(dx)) return;
-        if (dx < 0 && currentDay < 2) switchDay(currentDay + 1);
-        if (dx > 0 && currentDay > 1) switchDay(currentDay - 1);
-      }, { passive: true });
-    })();
-
     // ── Init ──────────────────────────────────────────
     (function init() {
       Object.entries(state).forEach(([id, done]) => {
@@ -706,7 +632,6 @@
         if (item) item.classList.add('done');
         if (btn)  btn.classList.add('checked');
       });
-      updateProgress();
       observeItems(document.getElementById('day-1'));
     })();
   </script>
