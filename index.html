@@ -41,11 +41,13 @@
     /* ── Hero ──────────────────────────────────────────── */
     .hero {
       position: relative;
-      height: calc(280px + env(safe-area-inset-top));
+      height: calc(300px + env(safe-area-inset-top));
       overflow: hidden;
       display: flex;
       align-items: flex-end;
       background: #0a0805;
+      margin-top: calc(-1 * env(safe-area-inset-top));
+      padding-top: env(safe-area-inset-top);
     }
 
     .hero-bg {
