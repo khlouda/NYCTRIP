@@ -213,11 +213,20 @@
       padding: 16px 0;
     }
 
+    /* Upper half: top of item → icon center */
     .item + .item::before {
       content: '';
       position: absolute;
       top: 0; left: 27px;
-      width: 1px; height: 100%;
+      width: 1px; height: 44px;
+      background: var(--border);
+    }
+    /* Lower half: icon center → bottom of item (only when next sibling is also an item) */
+    .item:has(+ .item)::after {
+      content: '';
+      position: absolute;
+      top: 44px; left: 27px;
+      width: 1px; bottom: 0;
       background: var(--border);
     }
 
