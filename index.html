@@ -44,8 +44,16 @@
       position: relative;
       background: var(--bg);
       padding: 36px 24px 28px;
-      text-align: center;
       overflow: hidden;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
     }
 
     .hero-bg {
@@ -68,7 +76,7 @@
           rgba(10,8,5,0.72) 100%);
     }
 
-    .hero > *:not(.hero-bg) {
+    .hero > *:not(.hero-bg):not(.hero-content) {
       position: relative;
       z-index: 1;
     }
@@ -112,8 +120,6 @@
       font-weight: 400;
       color: var(--dim);
       line-height: 1.5;
-      margin-top: 8px;
-      margin-bottom: 0;
     }
 
 
@@ -344,9 +350,11 @@
   <!-- ── Hero ──────────────────────────────────────── -->
   <header class="hero">
     <div class="hero-bg"></div>
-    <p class="hero-label">✈ New York City</p>
-    <h1 class="hero-title">NYC</h1>
-    <p class="hero-sub">April 4 – 5 &nbsp;·&nbsp; One night, one full day</p>
+    <div class="hero-content">
+      <p class="hero-label">✈ New York City</p>
+      <h1 class="hero-title">NYC</h1>
+      <p class="hero-sub">April 4 – 5 &nbsp;·&nbsp; One night, one full day</p>
+    </div>
 
     <!-- NYC Skyline silhouette -->
     <svg class="skyline" viewBox="0 0 800 72" preserveAspectRatio="xMidYMax slice" fill="#fff" xmlns="http://www.w3.org/2000/svg" style="opacity:0.18">
