@@ -8,16 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:       #07091c;
-      --surface:  rgba(255,255,255,0.042);
-      --border:   rgba(255,255,255,0.075);
-      --gold:     #f5c54a;
-      --gold-dim: rgba(245,197,74,0.15);
-      --text:     #ede9df;
-      --dim:      rgba(237,233,223,0.45);
-      --faint:    rgba(237,233,223,0.22);
-      --green:    #5de8a0;
-      --green-dim:rgba(93,232,160,0.14);
+      --bg:       #faf7f2;
+      --surface:  rgba(255,255,255,0.85);
+      --border:   rgba(0,0,0,0.08);
+      --gold:     #c47f17;
+      --gold-dim: rgba(196,127,23,0.1);
+      --text:     #1c1a16;
+      --dim:      rgba(28,26,22,0.52);
+      --faint:    rgba(28,26,22,0.3);
+      --green:    #1a9e5e;
+      --green-dim:rgba(26,158,94,0.1);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -43,8 +43,8 @@
     .hero {
       position: relative;
       background:
-        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(245,197,74,0.13) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 40% at 80% 120%, rgba(90,60,200,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255,200,80,0.22) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 20% 110%, rgba(255,160,80,0.15) 0%, transparent 60%),
         var(--bg);
       padding: 56px 24px 40px;
       text-align: center;
@@ -56,7 +56,8 @@
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 72px;
-      opacity: 0.08;
+      opacity: 0.12;
+      fill: #8b6f3a;
     }
 
     .hero-label {
@@ -101,7 +102,7 @@
     }
     .progress-bar-track {
       width: 80px; height: 4px;
-      background: rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.1);
       border-radius: 99px;
       overflow: hidden;
     }
@@ -256,9 +257,9 @@
       border: 1px solid rgba(245,197,74,0.25);
     }
     .badge-tip {
-      background: rgba(150,120,255,0.12);
-      color: rgba(180,160,255,0.9);
-      border: 1px solid rgba(150,120,255,0.2);
+      background: rgba(80,100,220,0.08);
+      color: rgba(60,80,200,0.85);
+      border: 1px solid rgba(80,100,220,0.18);
     }
 
     /* ── Checkbox ────────────────────────────────────── */
@@ -340,7 +341,7 @@
     </div>
 
     <!-- NYC Skyline silhouette -->
-    <svg class="skyline" viewBox="0 0 800 72" preserveAspectRatio="xMidYMax slice" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <svg class="skyline" viewBox="0 0 800 72" preserveAspectRatio="xMidYMax slice" fill="#7a5c2e" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,72 L0,50 L10,50 L10,40 L15,40 L15,35 L20,35 L20,30 L25,30 L25,28 L28,28 L28,20 L30,20 L30,15 L32,15 L32,20 L34,20 L34,28 L37,28 L37,30 L40,30 L40,35 L45,35 L45,40 L50,40 L50,45 L60,45 L60,38 L65,38 L65,30 L70,30 L70,25 L75,25 L75,18 L77,18 L77,12 L79,12 L79,8 L81,8 L81,12 L83,12 L83,18 L85,18 L85,25 L90,25 L90,30 L95,30 L95,38 L100,38 L100,45 L110,45 L110,35 L115,35 L115,28 L120,28 L120,22 L123,22 L123,15 L125,15 L125,10 L126,10 L126,6 L128,6 L128,10 L130,10 L130,15 L132,15 L132,22 L135,22 L135,28 L140,28 L140,35 L145,35 L145,45 L155,45 L155,40 L160,40 L160,32 L165,32 L165,25 L168,25 L168,18 L170,18 L170,14 L172,14 L172,18 L175,18 L175,25 L180,25 L180,32 L185,32 L185,40 L190,40 L190,45 L200,45 L200,38 L205,38 L205,30 L210,30 L210,24 L215,24 L215,16 L217,16 L217,10 L219,10 L219,5 L221,5 L221,3 L223,3 L223,5 L225,5 L225,10 L227,10 L227,16 L229,16 L229,24 L234,24 L234,30 L239,30 L239,38 L244,38 L244,45 L260,45 L260,42 L265,42 L265,35 L270,35 L270,28 L275,28 L275,35 L280,35 L280,42 L285,42 L285,45 L300,45 L300,40 L305,40 L305,32 L310,32 L310,25 L315,25 L315,18 L318,18 L318,12 L320,12 L320,8 L322,8 L322,12 L324,12 L324,18 L327,18 L327,25 L332,25 L332,32 L337,32 L337,40 L342,40 L342,45 L360,45 L360,38 L365,38 L365,30 L370,30 L370,22 L375,22 L375,15 L378,15 L378,9 L380,9 L380,4 L382,4 L382,9 L384,9 L384,15 L387,15 L387,22 L392,22 L392,30 L397,30 L397,38 L402,38 L402,45 L420,45 L420,40 L425,40 L425,32 L430,32 L430,26 L435,26 L435,32 L440,32 L440,40 L445,40 L445,45 L460,45 L460,38 L465,38 L465,28 L470,28 L470,20 L473,20 L473,13 L475,13 L475,7 L477,7 L477,13 L479,13 L479,20 L482,20 L482,28 L487,28 L487,38 L492,38 L492,45 L510,45 L510,40 L515,40 L515,35 L520,35 L520,42 L525,42 L525,45 L540,45 L540,38 L545,38 L545,30 L550,30 L550,23 L555,23 L555,30 L560,30 L560,38 L565,38 L565,45 L580,45 L580,40 L585,40 L585,32 L590,32 L590,25 L593,25 L593,18 L595,18 L595,12 L597,12 L597,18 L599,18 L599,25 L602,25 L602,32 L607,32 L607,40 L612,40 L612,45 L630,45 L630,50 L640,50 L640,44 L645,44 L645,36 L650,36 L650,44 L655,44 L655,50 L670,50 L670,42 L675,42 L675,34 L680,34 L680,27 L683,27 L683,20 L685,20 L685,15 L687,15 L687,20 L689,20 L689,27 L692,27 L692,34 L697,34 L697,42 L702,42 L702,50 L720,50 L720,44 L725,44 L725,50 L740,50 L740,44 L745,44 L745,50 L760,50 L760,44 L765,44 L765,36 L770,36 L770,44 L775,44 L775,50 L800,50 L800,72 Z"/>
     </svg>
   </header>
